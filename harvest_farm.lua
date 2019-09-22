@@ -1,0 +1,41 @@
+-- Planta o trigo em uma fileira
+turtle.select(16)
+turtle.forward()
+while turtle.detectUp() == true do
+	turtle.forward()
+	turtle.turnLeft()
+	turtle.dig()
+	turtle.place()
+	turtle.turnRight()
+	turtle.turnRight()
+	turtle.dig()
+	turtle.place()
+ 	turtle.turnLeft()
+end
+turtle.turnRight()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.turnRight()
+
+-- Planta a batata em uma fileira
+turtle.select(15)
+turtle.forward()
+while turtle.detectUp() == true do
+	turtle.forward()
+	turtle.turnLeft()
+	turtle.dig()
+	turtle.place()
+	turtle.turnRight()
+	turtle.turnRight()
+	turtle.dig()
+	turtle.place()
+ 	turtle.turnLeft()
+end
+turtle.turnRight()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.turnRight()
