@@ -14,9 +14,6 @@ local liquid_content = "Lava"
 
 wireless_module.open(modem_frequency)
 
--- Set warning lamp to off
-redstone.setOutput("right", false)
-
 -- Main prog loop, never stop
 while true do
   event, modemSide, senderChannel, senderID, message, distance = os.pullEvent("modem_message")
@@ -52,16 +49,12 @@ while true do
   monitor.setCursorPos(1, 5)
 
   if percentfull < warning then
-    redstone.setOutput("right", true)
     monitor.setBackgroundColor(colors.red)
     monitor.setTextColor(colors.black)
-    mon.write("Apenas " .. percentfull .. "% do máximo")
+    monitor.write("Apenas " .. percentfull .. "% do máximo")
     sleep(1)
-    redstone.setOutput("right", false)
     sleeptime = 1
   else
-    -- Above warning level, sleep longer
-    mon.write("More than " ..warning .."% full")
     sleeptime = 10
   end
 
